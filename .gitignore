@@ -1,0 +1,19 @@
+*.class
+*.classpath
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/target
+
+###############
+## mvn release
+*.releaseBackup
+release.properties
+
+#################
+## eclipse settings
+*.prefs
+*.project
+
