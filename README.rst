@@ -33,3 +33,7 @@ First of all, you have to check out the project::
 	mvn install
 	
 Then, import it as maven project in your IDE.
+
+To build a new release, you have to first update manually the CHANGES.rst file with the new version number, and then use the maven release plugin to create and upload the jar::
+
+	mvn release:prepare && release:perform
