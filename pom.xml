@@ -38,6 +38,26 @@
 		</snapshotRepository>
 	</distributionManagement>
 
+<build>
+<plugins>
+  <!--
+        Allow releases to have snapshot dependencies.
+
+        This is OK for now as we're not 1.0 yet.
+        Theese snapshot dependencies should be removed when releasing a production release.
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
