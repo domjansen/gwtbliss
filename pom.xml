@@ -3,7 +3,7 @@
 
 	<groupId>com.devbliss.gwtlib</groupId>
 	<artifactId>gwtlib</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2-SNAPSHOT</version>
 	<description>Documentation for the gwtlib library</description>
 	<packaging>jar</packaging>
 	<name>gwtlib</name>
