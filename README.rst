@@ -18,7 +18,7 @@ Copy the following lines with the correct version number::
 	<dependency>
   		<groupId>com.devbliss.gwtlib</groupId>
   		<artifactId>gwtlib</artifactId>
-  		<version>0.1</version>
+  		<version>0.2-SNAPSHOT</version>
 	</dependency>
 
 The jar file corresponding to the given version is hosted on `our intern nexus <http://nexus.vz.net/index.html#nexus-search;quick~gwtlib>`_.
