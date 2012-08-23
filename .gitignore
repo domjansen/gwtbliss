@@ -18,4 +18,5 @@ release.properties
 *.project
 
 
-/gwtlib.iml
+*.iml
+.DS_Store

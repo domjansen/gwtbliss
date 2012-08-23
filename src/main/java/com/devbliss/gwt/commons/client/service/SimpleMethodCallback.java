@@ -1,4 +1,4 @@
-package com.devbliss.gwtlib;
+package com.devbliss.gwt.commons.client.service;
 
 import java.util.logging.Logger;
 

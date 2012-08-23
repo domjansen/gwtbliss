@@ -1,15 +1,14 @@
-package com.devbliss.gwtlib.caching;
+package com.devbliss.gwt.commons.client.service.caching;
 
 import static junit.framework.Assert.assertEquals;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.devbliss.gwt.commons.client.command.TypedCommand;
 import org.fusesource.restygwt.client.MethodCallback;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.devbliss.gwtlib.TypedCommand;
 
 /**
  * @author david.richard@devbliss.com

@@ -1,13 +1,14 @@
-package com.devbliss.gwtlib.caching;
+package com.devbliss.gwt.commons.client.service.caching;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+import com.devbliss.gwt.commons.client.command.TypedCommand;
+import com.devbliss.gwt.commons.client.service.SimpleMethodCallback;
+
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
-
-import com.devbliss.gwtlib.SimpleMethodCallback;
-import com.devbliss.gwtlib.TypedCommand;
 
 /**
  * Base class for all cached providers. A provider retrieves data via a RestyGWT service call and

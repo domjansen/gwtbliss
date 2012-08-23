@@ -1,4 +1,4 @@
-package com.devbliss.gwtlib.toolbox.custompanels;
+package com.devbliss.commons.client.custompanels;
 
 import java.util.logging.Logger;
 
