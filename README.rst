@@ -23,7 +23,7 @@ Copy the following lines with the correct version number::
 
 The jar file corresponding to the given version is hosted on `our intern nexus <http://nexus.vz.net/index.html#nexus-search;quick~gwtlib>`_.
 
-Don't forget to introduce the lib to your GWT application's module __MyApp__.gwt.xml
+Don not forget to introduce the lib to your GWT application's module MY_APP_MODULE.gwt.xml::
 
     <module>
         <inherits name="com.devbliss.gwt.commons.Commons" />
@@ -42,7 +42,7 @@ This maybe done like that:
 * create the folder tree of the namespace, artifact id and version of the jar. Exmpl.: <PROJECTROOT>/lib/com/devbliss/gwt/commons/0.1-SNAPSHOT
 * copy the jar to the created folder
 
-Than you need to add the folders as new repository to your projects pom.
+Than you need to add the folders as new repository to your projects pom::
 
     <repositories>
         <repository>
@@ -60,7 +60,7 @@ Than you need to add the folders as new repository to your projects pom.
     </repositories>
 
 
-As last step you have to define the lib as a dependeny in the dependencies section.
+As last step you have to define the lib as a dependeny in the dependencies section::
 
     <dependencies>
         <!-- devliss gwtlib -->
