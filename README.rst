@@ -26,27 +26,25 @@ The jar file corresponding to the given version is hosted on `our intern nexus <
 Don't forget to introduce the lib to your GWT application's module <MyApp>.gwt.xml
 
     <module>
-        ...
         <inherits name="com.devbliss.gwt.commons.Commons" />
-        ...
     </module>
+
 
 Importing the lib java- and *.ui.xml code should work know.
 
-Building on external machines which have no access to DevBliss nexus repo
-==========================================================================
+Building with the lib as dependency on 3rd party machines
+=========================================================
 Since this library is not public accessible via the devbliss nexus, 3rd parties can not pull this dependency.
 If customers build devbliss products on their own, you have to provide/add a copy of the jar to your source code.
 This maybe done like that:
 
 * create a lib folder in your maven projects root folder
-* create the folder structur of the namespace, artifact id and version of the jar. Exmpl.: <PROJECTROOT>/lib/com/devbliss/gwt/commons/0.1-SNAPSHOT
+* create the folder tree of the namespace, artifact id and version of the jar. Exmpl.: <PROJECTROOT>/lib/com/devbliss/gwt/commons/0.1-SNAPSHOT
 * copy the jar to the created folder
 
 Than you need to add the folders as new repository to your projects pom.
 
     <repositories>
-        ...
         <repository>
             <id>lib</id>
             <name>lib</name>
@@ -59,8 +57,8 @@ Than you need to add the folders as new repository to your projects pom.
             </snapshots>
             <url>file://${project.basedir}/lib</url>
         </repository>
-        ...
     </repositories>
+
 
 As last step you have to define the lib as a dependeny in the dependencies section.
 
