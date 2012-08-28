@@ -23,7 +23,7 @@ Copy the following lines with the correct version number::
 
 The jar file corresponding to the given version is hosted on `our intern nexus <http://nexus.vz.net/index.html#nexus-search;quick~gwtlib>`_.
 
-Don't forget to introduce the lib to your GWT application's module <MyApp>.gwt.xml
+Don't forget to introduce the lib to your GWT application's module __MyApp__.gwt.xml
 
     <module>
         <inherits name="com.devbliss.gwt.commons.Commons" />
