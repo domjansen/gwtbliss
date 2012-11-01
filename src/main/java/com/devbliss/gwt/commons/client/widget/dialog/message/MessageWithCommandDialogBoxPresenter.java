@@ -65,14 +65,7 @@ public class MessageWithCommandDialogBoxPresenter extends PresenterWidget<Simple
      * @param command
      */
     public void open(String title, String message, Command command) {
-
-        view.setTitleOfDialog(title);
-        view.setMessage(message);
-        view.setCancelOptionVisible(true);
-        this.command = command;
-
-        view.showDialog();
-
+        doOpenDialog(title, message, command, true);
     }
 
     /**
@@ -87,14 +80,16 @@ public class MessageWithCommandDialogBoxPresenter extends PresenterWidget<Simple
      * @param showCancelOption if the cancel option should be shown.
      */
     public void open(String title, String message, Command command, boolean showCancelOption) {
+        doOpenDialog(title, message, command, showCancelOption);
+    }
 
+    private void doOpenDialog(String title, String message, Command command, boolean showCancelOption) {
         view.setTitleOfDialog(title);
         view.setMessage(message);
         view.setCancelOptionVisible(showCancelOption);
         this.command = command;
 
         view.showDialog();
-
     }
 
 }
