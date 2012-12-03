@@ -20,3 +20,6 @@ release.properties
 
 *.iml
 .DS_Store
+/gwt-unitCache/
+/www-test/
+/war/
