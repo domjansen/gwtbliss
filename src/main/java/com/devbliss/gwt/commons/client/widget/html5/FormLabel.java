@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.Widget;
  * A <code>label</code> tag which is associated with another widget.
  * 
  * <p>
- * Every label tag get's associated with its own unique id.
+ * Every label tag gets associated with its own unique id.
  * </p>
  * 
  * <h2>Usage:</h2>
