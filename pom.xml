@@ -41,6 +41,23 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${basedir}/www-test</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/gwt-unitCache</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/war</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <!-- Allow releases to have snapshot dependencies. This is OK for now 
                 as we're not 1.0 yet. Theese snapshot dependencies should be removed when 
                 releasing a production release. -->
@@ -57,6 +74,26 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <argLine>-Xmx512m</argLine>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${project.build.sourceDirectory}</additionalClasspathElement>
+                        <additionalClasspathElement>${project.build.testSourceDirectory}</additionalClasspathElement>
+                    </additionalClasspathElements>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
+                    <forkMode>always</forkMode>
+                    <systemProperties>
+                        <property>
+                            <name>gwt.args</name>
+                            <value>-out ${basedir}/war</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
 
@@ -103,6 +140,12 @@
             <artifactId>gwt-user</artifactId>
             <version>2.4.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>2.4.0</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
