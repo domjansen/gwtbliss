@@ -24,14 +24,14 @@
 
     <distributionManagement>
         <repository>
-            <id>vz.releases</id>
+            <id>nexus</id>
             <name>VZ/IDPOOL Release Repository</name>
             <url>http://nexus.vz.net/content/repositories/releases/</url>
             <layout>default</layout>
             <uniqueVersion>false</uniqueVersion>
         </repository>
         <snapshotRepository>
-            <id>vz.snapshots</id>
+            <id>nexus</id>
             <name>VZ/IDPOOL Snapshot Repository</name>
             <url>http://nexus.vz.net/content/repositories/snapshots/</url>
             <layout>default</layout>
