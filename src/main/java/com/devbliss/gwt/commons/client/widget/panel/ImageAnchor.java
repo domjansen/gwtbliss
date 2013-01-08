@@ -48,7 +48,7 @@ public class ImageAnchor extends Anchor {
   }
 
   /**
-   * Set the image referenced by an URI.
+   * Create an image element using an URI.
    */
   private static ImageElement createImage(final String src) {
     ImageElement img = Document.get().createImageElement();
@@ -57,7 +57,7 @@ public class ImageAnchor extends Anchor {
   }
 
   /**
-   * Set the image referenced by an {@link ImageResource}.
+   * Create an image element using an {@link ImageResource}.
    */
   private static ImageElement createImage(final ImageResource imageResource) {
     ImageElement img = new Image(imageResource).getElement().cast();
