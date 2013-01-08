@@ -43,7 +43,7 @@ public class UnparsableCruftCallbackFilter implements CallbackFilter {
 
     @Override
     public String getText() {
-      return original.getText().replaceFirst("^[ ]*<\\{\\(", "").replaceFirst("^[ ]*\\)\\}>", "");
+      return original.getText().replaceFirst("^[ ]*<\\{\\(", "");
     }
 
     @Override

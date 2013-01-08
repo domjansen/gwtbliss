@@ -38,7 +38,7 @@ public class UnparsableCruftCallbackFilterTest {
   @Mock
   private Response originalResponse;
   @Captor
-  private ArgumentCaptor<Response> interceptedResponeCaptor;
+  private ArgumentCaptor<Response> interceptedResponseCaptor;
 
   @Mock
   private RequestCallback originalCallback;
@@ -57,9 +57,9 @@ public class UnparsableCruftCallbackFilterTest {
     RequestCallback returnedCallback = callbackFilter.filter(method, originalResponse, originalCallback);
     returnedCallback.onResponseReceived(request, originalResponse);
 
-    verify(originalCallback).onResponseReceived(eq(request), interceptedResponeCaptor.capture());
+    verify(originalCallback).onResponseReceived(eq(request), interceptedResponseCaptor.capture());
 
-    assertEquals(TEXT, interceptedResponeCaptor.getValue().getText());
+    assertEquals(TEXT, interceptedResponseCaptor.getValue().getText());
   }
 
   /**
@@ -72,9 +72,9 @@ public class UnparsableCruftCallbackFilterTest {
     RequestCallback returnedCallback = callbackFilter.filter(method, originalResponse, originalCallback);
     returnedCallback.onResponseReceived(request, originalResponse);
 
-    verify(originalCallback).onResponseReceived(eq(request), interceptedResponeCaptor.capture());
+    verify(originalCallback).onResponseReceived(eq(request), interceptedResponseCaptor.capture());
 
-    assertEquals(TEXT, interceptedResponeCaptor.getValue().getText());
+    assertEquals(TEXT, interceptedResponseCaptor.getValue().getText());
   }
 
 }
