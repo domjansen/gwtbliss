@@ -1,0 +1,251 @@
+/*
+ * Copyright 2013, devbliss GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+/**
+ * global main styles
+ *
+ * parts:
+ *      - basics
+ *      - helpers
+ *      - media object
+ */
+
+/********************************************************************/
+/* Start - resetish basics */
+body {
+    margin: 0
+}
+
+html,
+textarea,
+input,
+select,
+button {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+object,
+embed {
+    outline: 0;
+}
+
+table td{
+    vertical-align: top;
+}
+
+select {
+    padding: 1px;
+}
+
+/* End - resetish basics */
+/********************************************************************/
+
+/********************************************************************/
+/* Start - generic helpers */
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.error {
+    color: red;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.height-auto {
+    height: auto;
+}
+
+.width-auto {
+    width: auto;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* End - generic helpers */
+/********************************************************************/
+
+/********************************************************************/
+/* Start - page elements
+ */
+header {
+    border-color: #000000;
+    min-width: 960px;
+    top: 0;
+    width: 100%;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+}
+
+.menu a {
+  color: #fff;
+  display: inline-block;
+  padding: 3px 7px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.stage{
+    padding: 10px;
+}
+/* End - page elements */
+/********************************************************************/
+
+/********************************************************************/
+/* Start - media object (<div><a><img/></a><div></div></div>)
+ * - 10px right margin on every media block
+ * - floats image block left and sets margin on the right side
+ * - sets body next to image block
+ *
+ */
+
+.media:after, .body:after{
+    clear: both;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0 !important;
+    line-height: 0;
+    font-size: xx-large;
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+.media .body {
+    display: table-cell;
+    zoom: 1;
+}
+
+.media .body >:last-child {
+    margin-bottom: 0;
+}
+
+.media .image {
+    float: left;
+    margin-right: 10px;
+}
+
+.media .image img {
+    display: block;
+}
+
+.media {
+    margin-bottom: 10px;
+}
+
+/* End - media object */
+/********************************************************************/
+
+/********************************************************************/
+/* Start - form & button
+ */
+
+textarea:hover,
+textarea:active,
+textarea,
+input:hover,
+input:active,
+input {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+}
+
+button {
+    cursor: pointer;
+    border: 0 none;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+    background-color: #7ede00;
+    background-image: linear-gradient(to bottom, #7ede00, #61ab00);
+    background-repeat: repeat-x;
+    font-size: 20px;
+    padding: 5px 13px;
+}
+
+button:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* End - form & button */
+/********************************************************************/

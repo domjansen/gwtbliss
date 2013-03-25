@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+
+  <!--
+    Copyright 2013, devbliss GmbH
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+
+  <!--
+    GWT module dependencies.
+  -->
+  <inherits name="com.google.gwt.user.User" />
+  <inherits name="com.google.gwt.logging.Logging" />
+  <inherits name="com.google.gwt.precompress.Precompress" />
+  <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+  <inherits name="de.barop.gwt.PushState" />
+  <inherits name="org.fusesource.restygwt.RestyGWT" />
+  <inherits name="com.devbliss.gwtbliss.Shared" />
+
+  <!--
+    Define all supported languages.
+
+    This value has to be the complete locale value, e.g. "de_DE", otherwise it will not work.
+  -->
+  <extend-property
+    name="locale"
+    values="dev, en_EN" />
+  <set-property-fallback
+    name="locale"
+    value="dev" />
+
+  <!--
+    Disable unwanted logging handlers.
+  -->
+  <set-property
+    name="gwt.logging.firebugHandler"
+    value="DISABLED" />
+  <set-property
+    name="gwt.logging.hasWidgetsHandler"
+    value="DISABLED" />
+  <set-property
+    name="gwt.logging.popupHandler"
+    value="DISABLED" />
+
+  <!--
+    GWTP configuration.
+  -->
+  <set-configuration-property
+    name="gin.ginjector.modules"
+    value="client.ApplicationModule" />
+  <set-configuration-property
+    name="gwtp.bootstrapper"
+    value="client.BlissBootstrapper" />
+
+  <!--
+    Configure the linker.
+  -->
+  <add-linker name="std" />
+
+  <!--
+    Hogwarts Express...
+  -->
+  <source path='client' />
+
+</module>

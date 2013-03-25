@@ -1,25 +1,9 @@
-*.class
-*.classpath
-
-# Package Files #
-*.jar
-*.war
-*.ear
-/target
-
-###############
-## mvn release
-*.releaseBackup
-release.properties
-
-#################
-## eclipse settings
-*.prefs
-*.project
-
-
-*.iml
-.DS_Store
-/gwt-unitCache/
-/www-test/
-/war/
+.project
+.settings
+.classpath
+gwtbliss-shared/gwt-unitCache
+gwtbliss-shared/target
+gwtbliss-shared/war
+gwtbliss-shared/www-test
+gwtbliss-parent/target/
+gwtbliss-example/target

@@ -1,0 +1,9 @@
+Package: [[name]]
+Version: [[version]]
+Architecture: all
+Maintainer: devbliss GmbH <info@devbliss.com>
+Section: extras
+Priority: optional
+Homepage: https://github.com/devbliss/gwtbliss
+Description: gwtbliss Sample
+ Sample application which shows how we're using gwtbliss

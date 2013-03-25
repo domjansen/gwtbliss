@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+    <groupId>com.devbliss</groupId>
+    <artifactId>gwtbliss-parent</artifactId>
+    <version>0.2-SNAPSHOT</version>
+    <relativePath>../gwtbliss-parent/pom.xml</relativePath>
+  </parent>
+
+
+  <artifactId>gwtbliss-example</artifactId>
+  <packaging>war</packaging>
+
+
+  <properties>
+    <gwt.module>GwtBlissExample</gwt.module>
+    <gwt.module.locale>dev</gwt.module.locale>
+  </properties>
+
+
+  <dependencies>
+    <!--
+      This is only needed when you want HTML5 pushState support.
+    -->
+    <dependency>
+      <groupId>de.barop.gwt</groupId>
+      <artifactId>gwt-pushstate</artifactId>
+    </dependency>
+    <!--
+      This is only needed for transparent proxy to an backend configured in 'src/main/webapp/WEB-INF/web.xml'.
+    -->
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty-util</artifactId>
+    </dependency>
+  </dependencies>
+
+
+  <build>
+    <plugins>
+
+      <!--
+        Configure GWT Maven plugin.
+
+        For example for CSS, I18N, ...
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <runTarget>/</runTarget>
+          <cssFiles>
+            <cssFile>client/resources/css/Common.css</cssFile>
+            <cssFile>client/resources/css/ResponsiveDefault.css</cssFile>
+            <cssFile>client/resources/css/ResponsiveTabletPortrait.css</cssFile>
+            <cssFile>client/resources/css/ResponsiveTabletLandscape.css</cssFile>
+            <cssFile>client/resources/css/ResponsivePhonePortrait.css</cssFile>
+            <cssFile>client/resources/css/ResponsivePhoneLandscape.css</cssFile>
+          </cssFiles>
+          <i18nMessagesBundles>
+            <i18nMessagesBundle>client.resources.lang.ApplicationMessages</i18nMessagesBundle>
+          </i18nMessagesBundles>
+        </configuration>
+      </plugin>
+
+      <!--
+        Enable building of an Debian package.
+
+        See 'src/deb' for it's configuration.
+      -->
+      <plugin>
+        <artifactId>jdeb</artifactId>
+        <groupId>org.vafer</groupId>
+      </plugin>
+    </plugins>
+
+  </build>
+
+
+  <profiles>
+    <profile>
+      <id>production</id>
+      <properties>
+        <gwt.module.locale>en_EN</gwt.module.locale>
+      </properties>
+    </profile>
+  </profiles>
+
+
+</project>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5">
+
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+
+  <!--
+    Configure Tuckey which will be used for rewriting URLs.
+
+    See urlrewrite.xml for its configuration.
+  -->
+  <filter>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+
+  <!--
+    Configure a proxy servlet which allows easy and transparent testing without cross domain issues.
+  -->
+  <servlet>
+    <servlet-name>JettyProxy</servlet-name>
+    <servlet-class>org.mortbay.servlet.ProxyServlet$Transparent</servlet-class>
+    <init-param>
+      <param-name>ProxyTo</param-name>
+      <param-value>http://127.0.0.1:8080/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Prefix</param-name>
+      <param-value>/</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <!--
+    Configure the routes which will be proxied to the backend.
+  -->
+  <servlet-mapping>
+    <servlet-name>JettyProxy</servlet-name>
+    <url-pattern>/v1/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

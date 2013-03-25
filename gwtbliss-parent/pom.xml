@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+    <groupId>com.devbliss</groupId>
+    <artifactId>gwtbliss</artifactId>
+    <version>0.2-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+
+  <artifactId>gwtbliss-parent</artifactId>
+  <packaging>pom</packaging>
+
+
+  <properties>
+
+    <!--
+      Name of the GWT module.
+
+      This has to be specified in a child project.
+    -->
+    <gwt.module />
+
+    <!--
+      Some Maven filtering magic is done to apply Maven-properties to the GWT module. The renaming of
+      "${gwt.module}.template.gwt.xml" to "${gwt.module}.gwt.xml" is needed because the source and the
+      target directory is in the classpath.
+    -->
+    <gwt.module.base>${gwt.module}Base</gwt.module.base>
+    <gwt.module.template>${gwt.module}.template.gwt.xml</gwt.module.template>
+    <gwt.module.final>${gwt.module}.gwt.xml</gwt.module.final>
+
+    <!--
+      GWT settings.
+
+      By default these settings are optimized for development.
+    -->
+    <gwt.plugin.version>2.5.0</gwt.plugin.version>
+    <gwt.logLevel>INFO</gwt.logLevel>
+    <gwt.inplace>false</gwt.inplace>
+    <gwt.style>DETAILED</gwt.style>
+    <gwt.compiler.optimizationLevel>0</gwt.compiler.optimizationLevel>
+    <gwt.draftCompile>true</gwt.draftCompile>
+    <gwt.enableAssertions>true</gwt.enableAssertions>
+    <gwt.disableCastChecking>false</gwt.disableCastChecking>
+    <gwt.disableClassMetadata>false</gwt.disableClassMetadata>
+    <gwt.compiler.enableClosureCompiler>false</gwt.compiler.enableClosureCompiler>
+    <gwt.compiler.fragmentCount>-1</gwt.compiler.fragmentCount>
+    <gwt.disableRunAsync>true</gwt.disableRunAsync>
+    <gwt.compiler.compileReport>false</gwt.compiler.compileReport>
+    <gwt.compiler.soycDetailed>false</gwt.compiler.soycDetailed>
+    <gwt.compiler.localWorkers>2</gwt.compiler.localWorkers>
+    <gwt.extraJvmArgs>-Xms512m -Xmx1g -XX:MaxPermSize=256m</gwt.extraJvmArgs>
+    <gwt.module.gwtp.prebootstrapper>com.devbliss.gwtbliss.client.ExceptionPreBootstrapper</gwt.module.gwtp.prebootstrapper>
+    <gwt.module.logging.enabled>TRUE</gwt.module.logging.enabled>
+    <gwt.module.logging.logLevel>INFO</gwt.module.logging.logLevel>
+    <gwt.module.logging.localLogging>ENABLED</gwt.module.logging.localLogging>
+    <gwt.module.logging.remoteLogging>DISABLED</gwt.module.logging.remoteLogging>
+    <gwt.module.compiler.useSourceMaps>true</gwt.module.compiler.useSourceMaps>
+    <gwt.module.compiler.stackMode>emulated</gwt.module.compiler.stackMode>
+    <gwt.module.compiler.enum.obfuscate.names>false</gwt.module.compiler.enum.obfuscate.names>
+    <gwt.module.gwt.enableDebugId>true</gwt.module.gwt.enableDebugId>
+    <gwt.module.CssResource.style>pretty</gwt.module.CssResource.style>
+    <gwt.module.devModeRedirectEnabled>true</gwt.module.devModeRedirectEnabled>
+    <gwt.module.user.agent>ie8,ie9,gecko1_8,safari,opera</gwt.module.user.agent> <!-- no ie6 by default -->
+
+    <!--
+      Old but fast and compatible with GWT's embedded Jetty.
+    -->
+    <jetty.version>6.1.26</jetty.version>
+  </properties>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.devbliss</groupId>
+      <artifactId>gwtbliss-shared</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.tuckey</groupId>
+      <artifactId>urlrewritefilter</artifactId>
+    </dependency>
+  </dependencies>
+
+
+  <build>
+    <pluginManagement>
+      <plugins>
+
+        <!--
+          GWT Maven plugin configuration.
+
+          Binds CSS and I18N generation to the generate-sources and gwt-compile to the prepare-package phase.
+        -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-user</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-dev</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <copyWebapp>false</copyWebapp>
+            <debugSuspend>false</debugSuspend>
+            <enableAssertions>${gwt.enableAssertions}</enableAssertions>
+            <runClasspathExcludes>
+              <runClasspathExclude>gwt-dev-${gwt.version}.jar</runClasspathExclude>
+            </runClasspathExcludes>
+          </configuration>
+          <executions>
+            <!--
+              GWT resource generation.
+            -->
+            <execution>
+              <id>generate-css</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>css</goal>
+                <goal>i18n</goal>
+              </goals>
+            </execution>
+            <!--
+              Bind GWT compilation to a later phase.
+            -->
+            <execution>
+              <id>compile-gwt</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!--
+          Enable resource filtering on web-app resources.
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>copy-webapp</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>exploded</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <webResources>
+              <resource>
+                <directory>src/main/webapp</directory>
+                <filtering>true</filtering>
+              </resource>
+            </webResources>
+          </configuration>
+        </plugin>
+
+        <!--
+          Debian package generation
+        -->
+        <plugin>
+          <artifactId>jdeb</artifactId>
+          <groupId>org.vafer</groupId>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>jdeb</goal>
+              </goals>
+              <configuration>
+                <dataSet>
+                  <data>
+                    <src>${project.build.directory}/${project.build.finalName}/</src>
+                    <type>directory</type>
+                    <excludes>WEB-INF/**,META-INF/**,**/hosted.html,**/hosted.html.gz</excludes>
+                  </data>
+                </dataSet>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!--
+          For running the static version with.
+        -->
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>maven-jetty-plugin</artifactId>
+          <configuration>
+            <contextPath>/</contextPath>
+            <systemProperties>
+              <systemProperty>
+                <name>jetty.port</name>
+              </systemProperty>
+            </systemProperties>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+
+    <plugins>
+
+      <!--
+        Some non-Maven magic to deal with GWT projects easier.
+
+        The tasks are conditional so that it can be inherited by child projects automatically. This is not very
+        mavish but it makes things simpler.
+      -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <!--
+            Rename the filtered module file to its final name.
+          -->
+          <execution>
+            <id>rename-template</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <taskdef
+                  resource="net/sf/antcontrib/antcontrib.properties"
+                  classpathref="maven.plugin.classpath" />
+                <if>
+                  <available file="${project.build.directory}/classes/${gwt.module.template}" />
+                  <then>
+                    <copy
+                      file="${project.build.directory}/classes/${gwt.module.template}"
+                      tofile="${project.build.directory}/classes/${gwt.module.final}" />
+                  </then>
+                </if>
+              </target>
+            </configuration>
+          </execution>
+          <!--
+            Fix some of the generated files...
+          -->
+          <execution>
+            <id>fix-generated-css-interfaces</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <taskdef
+                  resource="net/sf/antcontrib/antcontrib.properties"
+                  classpathref="maven.plugin.classpath" />
+                <if>
+                  <available file="${project.build.directory}/generated-sources/gwt" />
+                  <then>
+                    <!--
+                      Get rid of the unused import which causes unnecessary warnings in Eclipse.
+                    -->
+                    <replaceregexp
+                      match="^import com.google.gwt.resources.client.CssResource.ClassName;"
+                      replace=""
+                      flags="m">
+                      <fileset
+                        dir="${project.build.directory}/generated-sources/gwt"
+                        includes="**/*.java" />
+                    </replaceregexp>
+                    <!--
+                      Pre GWT 2.5.1 the generated CSS resources were package private.
+                    -->
+                    <replaceregexp
+                      match="^interface"
+                      replace="public interface"
+                      flags="m">
+                      <fileset
+                        dir="${project.build.directory}/generated-sources/gwt"
+                        includes="**/*.java" />
+                    </replaceregexp>
+                  </then>
+                </if>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>20020829</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <!--
+        Add the generated-sources as source folder.
+
+        This is covered by the GWT Maven plugin but we have to it manually so that Eclipse picks it up.
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-gwt-sources</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources/gwt</source>
+              </sources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>add-generated-gwt-sources-resources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>add-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/generated-sources/gwt</directory>
+                  <includes>
+                    <include>**/*.java</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+
+  <profiles>
+    <!--
+      Profile for limiting browser support to Firefox.
+    -->
+    <profile>
+      <id>gecko</id>
+      <properties>
+        <gwt.module.user.agent>gecko1_8</gwt.module.user.agent>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for limiting browser support to Webkit based browsers.
+    -->
+    <profile>
+      <id>webkit</id>
+      <properties>
+        <gwt.module.user.agent>safari</gwt.module.user.agent>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for limiting browser support to IE browsers.
+    -->
+    <profile>
+      <id>ie</id>
+      <properties>
+        <gwt.module.user.agent>ie6,ie8,ie9</gwt.module.user.agent>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for limiting browser support to Opera.
+    -->
+    <profile>
+      <id>opera</id>
+      <properties>
+        <gwt.module.user.agent>opera</gwt.module.user.agent>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for an optimized build.
+    -->
+    <profile>
+      <id>production</id>
+      <properties>
+        <gwt.style>OBF</gwt.style>
+        <gwt.compiler.optimizationLevel>9</gwt.compiler.optimizationLevel>
+        <gwt.draftCompile>false</gwt.draftCompile>
+        <gwt.enableAssertions>false</gwt.enableAssertions>
+        <gwt.disableCastChecking>true</gwt.disableCastChecking>
+        <gwt.disableClassMetadata>true</gwt.disableClassMetadata>
+        <gwt.compiler.enableClosureCompiler>true</gwt.compiler.enableClosureCompiler>
+        <gwt.compiler.fragmentCount>3</gwt.compiler.fragmentCount>
+        <gwt.disableRunAsync>false</gwt.disableRunAsync>
+        <gwt.module.gwtp.prebootstrapper></gwt.module.gwtp.prebootstrapper>
+        <gwt.module.logging.enabled>FALSE</gwt.module.logging.enabled>
+        <gwt.module.compiler.useSourceMaps>false</gwt.module.compiler.useSourceMaps>
+        <gwt.module.compiler.stackMode>strip</gwt.module.compiler.stackMode>
+        <gwt.module.compiler.enum.obfuscate.names>true</gwt.module.compiler.enum.obfuscate.names>
+        <gwt.module.gwt.enableDebugId>false</gwt.module.gwt.enableDebugId>
+        <gwt.module.CssResource.style>obf</gwt.module.CssResource.style>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for enabling GWT compiler reports.
+
+      Usage: mvn package -Pproduction,soyc,webkit
+    -->
+    <profile>
+      <id>soyc</id>
+      <properties>
+        <gwt.compiler.compileReport>true</gwt.compiler.compileReport>
+        <gwt.compiler.soycDetailed>true</gwt.compiler.soycDetailed>
+        <!--
+          Clourse compiler cannot be used when generating compile report.
+          See http://code.google.com/p/google-web-toolkit/issues/detail?id=7475
+        -->
+        <gwt.compiler.enableClosureCompiler>false</gwt.compiler.enableClosureCompiler>
+      </properties>
+    </profile>
+
+    <!--
+      Profile for a continuous integration build on jenkins.
+    -->
+    <profile>
+      <id>jenkins</id>
+      <properties>
+        <gwt.compiler.localWorkers>6</gwt.compiler.localWorkers>
+        <gwt.extraJvmArgs>-Xms512m -Xmx1536m -XX:MaxPermSize=256m</gwt.extraJvmArgs>
+      </properties>
+    </profile>
+
+  </profiles>
+
+
+</project>
