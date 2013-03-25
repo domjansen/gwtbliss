@@ -6,6 +6,13 @@
   <modelVersion>4.0.0</modelVersion>
 
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+
   <groupId>com.devbliss</groupId>
   <artifactId>gwtbliss</artifactId>
   <packaging>pom</packaging>
@@ -357,6 +364,19 @@
                     <ignore></ignore>
                   </action>
                 </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>enforce</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
@@ -370,7 +390,7 @@
 
   <scm>
     <connection>scm:git:git@github.com:devbliss/gwtbliss.git</connection>
-    <url>scm:git:git@github.com:devbliss/gwtbliss.git</url>
+    <url>https://github.com/devbliss/gwtbliss</url>
     <developerConnection>scm:git:git@github.com:devbliss/gwtbliss.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
