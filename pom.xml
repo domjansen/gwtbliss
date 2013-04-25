@@ -413,5 +413,35 @@
     </snapshotRepository>
   </distributionManagement>
 
+  <developers>
+    <developer>
+      <name>Johannes Barop</name>
+      <email>johannes.barop@devbliss.com</email>
+      <url>http://www.devbliss.com</url>
+      <roles>
+        <role>Author</role>
+      </roles>
+      <organization>devbliss GmbH</organization>
+    </developer>
+    <developer>
+      <name>Bastien Mary</name>
+      <email>bastien.mary@devbliss.com</email>
+      <url>http://www.devbliss.com</url>
+      <roles>
+        <role>Author</role>
+      </roles>
+      <organization>devbliss GmbH</organization>
+    </developer>
+  </developers>
 
+  <contributors>
+    <!-- 
+    <contributor>
+      <name>Noelle</name>
+      <email>some.name@gmail.com</email>
+      <url>http://noellemarie.com</url>
+    </contributor>
+    -->
+  </contributors>
+  
 </project>
