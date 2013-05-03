@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
 
   <parent>
     <groupId>com.devbliss</groupId>
     <artifactId>gwtbliss</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -238,15 +235,11 @@
             </goals>
             <configuration>
               <target>
-                <taskdef
-                  resource="net/sf/antcontrib/antcontrib.properties"
-                  classpathref="maven.plugin.classpath" />
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath" />
                 <if>
                   <available file="${project.build.directory}/classes/${gwt.module.template}" />
                   <then>
-                    <copy
-                      file="${project.build.directory}/classes/${gwt.module.template}"
-                      tofile="${project.build.directory}/classes/${gwt.module.final}" />
+                    <copy file="${project.build.directory}/classes/${gwt.module.template}" tofile="${project.build.directory}/classes/${gwt.module.final}" />
                   </then>
                 </if>
               </target>
@@ -263,33 +256,21 @@
             </goals>
             <configuration>
               <target>
-                <taskdef
-                  resource="net/sf/antcontrib/antcontrib.properties"
-                  classpathref="maven.plugin.classpath" />
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath" />
                 <if>
                   <available file="${project.build.directory}/generated-sources/gwt" />
                   <then>
                     <!--
                       Get rid of the unused import which causes unnecessary warnings in Eclipse.
                     -->
-                    <replaceregexp
-                      match="^import com.google.gwt.resources.client.CssResource.ClassName;"
-                      replace=""
-                      flags="m">
-                      <fileset
-                        dir="${project.build.directory}/generated-sources/gwt"
-                        includes="**/*.java" />
+                    <replaceregexp match="^import com.google.gwt.resources.client.CssResource.ClassName;" replace="" flags="m">
+                      <fileset dir="${project.build.directory}/generated-sources/gwt" includes="**/*.java" />
                     </replaceregexp>
                     <!--
                       Pre GWT 2.5.1 the generated CSS resources were package private.
                     -->
-                    <replaceregexp
-                      match="^interface"
-                      replace="public interface"
-                      flags="m">
-                      <fileset
-                        dir="${project.build.directory}/generated-sources/gwt"
-                        includes="**/*.java" />
+                    <replaceregexp match="^interface" replace="public interface" flags="m">
+                      <fileset dir="${project.build.directory}/generated-sources/gwt" includes="**/*.java" />
                     </replaceregexp>
                   </then>
                 </if>
@@ -407,7 +388,7 @@
         <gwt.compiler.enableClosureCompiler>true</gwt.compiler.enableClosureCompiler>
         <gwt.compiler.fragmentCount>3</gwt.compiler.fragmentCount>
         <gwt.disableRunAsync>false</gwt.disableRunAsync>
-        <gwt.module.gwtp.prebootstrapper></gwt.module.gwtp.prebootstrapper>
+        <gwt.module.gwtp.prebootstrapper />
         <gwt.module.logging.enabled>FALSE</gwt.module.logging.enabled>
         <gwt.module.compiler.useSourceMaps>false</gwt.module.compiler.useSourceMaps>
         <gwt.module.compiler.stackMode>strip</gwt.module.compiler.stackMode>
