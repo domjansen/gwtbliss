@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.devbliss</groupId>
     <artifactId>gwtbliss-parent</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.4</version>
     <relativePath>../gwtbliss-parent/pom.xml</relativePath>
   </parent>
 
