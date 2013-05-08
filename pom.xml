@@ -2,18 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-
   <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
   </parent>
 
-
   <groupId>com.devbliss</groupId>
   <artifactId>gwtbliss</artifactId>
   <packaging>pom</packaging>
   <version>0.4-SNAPSHOT</version>
+  <description>utilities library to build your maven gwt project</description>
+  <url>https://github.com/devbliss/gwtbliss</url>
+  <organization>
+    <name>devbliss GmbH</name>
+    <url>http://www.devbliss.com</url>
+  </organization>
+  <inceptionYear>2013</inceptionYear>
 
 
   <licenses>
@@ -394,7 +399,7 @@
 
 
   <distributionManagement>
-    <repository>
+    <!-- repository>
       <id>nexus</id>
       <name>devbliss Release Repository</name>
       <url>http://nexus.devbliss.com/content/repositories/releases/</url>
@@ -407,7 +412,7 @@
       <url>http://nexus.devbliss.com/content/repositories/snapshots/</url>
       <layout>default</layout>
       <uniqueVersion>true</uniqueVersion>
-    </snapshotRepository>
+    </snapshotRepository -->
   </distributionManagement>
 
   <developers>
@@ -429,6 +434,15 @@
       </roles>
       <organization>devbliss GmbH</organization>
     </developer>
+    <developer>
+      <name>Henning Schuetz</name>
+      <email>henning.schuetz@devbliss.com</email>
+      <url>http://www.devbliss.com</url>
+      <roles>
+        <role>Author</role>
+      </roles>
+      <organization>devbliss GmbH</organization>
+    </developer>    
   </developers>
 
   <contributors>
