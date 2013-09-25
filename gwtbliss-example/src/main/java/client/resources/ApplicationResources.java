@@ -14,12 +14,11 @@
 
 package client.resources;
 
+import client.resources.lang.ApplicationMessages;
+import client.resources.css.*;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.StyleInjector;
-
-import client.resources.css.Common;
-import client.resources.css.ResponsiveDefault;
-import client.resources.lang.ApplicationMessages;
 
 /**
  * Wraps access to the resources and provides proper initialization.
