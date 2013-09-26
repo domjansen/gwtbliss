@@ -26,7 +26,11 @@
   <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
   <inherits name="de.barop.gwt.PushState" />
   <inherits name="org.fusesource.restygwt.RestyGWT" />
-  <inherits name="com.devbliss.gwtbliss.Shared" />
+  <inherits name="com.devbliss.gwtbliss.GwtblissCommon" />
+  <inherits name="com.devbliss.gwtbliss.GwtblissEffect" />
+  <inherits name="com.devbliss.gwtbliss.GwtblissMvp" />
+  <inherits name="com.devbliss.gwtbliss.GwtblissService" />
+  <inherits name="com.devbliss.gwtbliss.GwtblissUI" />
 
   <!--
     Define all supported languages.

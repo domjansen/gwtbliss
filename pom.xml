@@ -11,7 +11,7 @@
   <groupId>com.devbliss</groupId>
   <artifactId>gwtbliss</artifactId>
   <packaging>pom</packaging>
-  <version>0.5.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <description>utilities library to build your maven gwt project</description>
   <url>https://github.com/devbliss/gwtbliss</url>
   <organization>
@@ -28,7 +28,12 @@
   </licenses>
 
   <modules>
-    <module>gwtbliss-shared</module>
+    <module>gwtbliss-all</module>
+    <module>gwtbliss-common</module>
+    <module>gwtbliss-effect</module>
+    <module>gwtbliss-service</module>
+    <module>gwtbliss-mvp</module>
+    <module>gwtbliss-ui</module>
     <module>gwtbliss-parent</module>
     <module>gwtbliss-example</module>
   </modules>
@@ -36,6 +41,16 @@
 
   <properties>
     <gwt.version>2.5.1</gwt.version>
+    <gwtquery.version>1.1.0</gwtquery.version>
+    <gwtplatform.version>1.0-RC-3</gwtplatform.version>
+    <guice-assistedinject.version>3.0</guice-assistedinject.version>
+    <gin.version>2.0.0</gin.version>
+    <jsr311-api.version>1.1.1</jsr311-api.version>
+    <restygwt.version>1.3</restygwt.version>
+    <gwt-pushstate.version>1.0.0</gwt-pushstate.version>
+    <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
+    <junit.version>4.10</junit.version>
+    <mockito.version>1.9.5</mockito.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -51,11 +66,11 @@
       -->
       <dependency>
         <groupId>com.devbliss</groupId>
-        <artifactId>gwtbliss-shared</artifactId>
+        <artifactId>gwtbliss-all</artifactId>
         <!--
           Can't use ${project.version} here because the child projects would override the property.
         -->
-        <version>0.5.1-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!--
@@ -91,7 +106,7 @@
       <dependency>
         <groupId>com.googlecode.gwtquery</groupId>
         <artifactId>gwtquery</artifactId>
-        <version>1.1.0</version>
+        <version>${gwtquery.version}</version>
       </dependency>
 
       <!--
@@ -102,17 +117,17 @@
       <dependency>
         <groupId>com.gwtplatform</groupId>
         <artifactId>gwtp-mvp-client</artifactId>
-        <version>1.0-RC-3</version>
+        <version>${gwtplatform.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-assistedinject</artifactId>
-        <version>3.0</version>
+        <version>${guice-assistedinject.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.gwt.inject</groupId>
         <artifactId>gin</artifactId>
-        <version>2.0.0</version>
+        <version>${gin.version}</version>
       </dependency>
 
       <!--
@@ -123,12 +138,12 @@
       <dependency>
         <groupId>javax.ws.rs</groupId>
         <artifactId>jsr311-api</artifactId>
-        <version>1.1.1</version>
+        <version>${jsr311-api.version}</version>
       </dependency>
       <dependency>
         <groupId>org.fusesource.restygwt</groupId>
         <artifactId>restygwt</artifactId>
-        <version>1.3</version>
+        <version>${restygwt.version}</version>
       </dependency>
 
       <!--
@@ -146,7 +161,7 @@
       <dependency>
         <groupId>de.barop.gwt</groupId>
         <artifactId>gwt-pushstate</artifactId>
-        <version>1.0.0</version>
+        <version>${gwt-pushstate.version}</version>
       </dependency>
 
       <!--
@@ -155,7 +170,7 @@
       <dependency>
         <groupId>org.tuckey</groupId>
         <artifactId>urlrewritefilter</artifactId>
-        <version>4.0.4</version>
+        <version>${urlrewritefilter.version}</version>
       </dependency>
 
       <!--
@@ -164,13 +179,13 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.10</version>
+        <version>${junit.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
-        <version>1.9.5</version>
+        <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
 

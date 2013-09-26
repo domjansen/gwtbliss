@@ -14,15 +14,15 @@
 
 package client;
 
-import com.devbliss.gwtbliss.client.mvp.BlissDefaultModule;
-import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
-
 import client.grid.GridPresenter;
 import client.grid.GridViewImpl;
 import client.index.IndexPresenter;
 import client.index.IndexViewImpl;
 import client.notfound.NotFoundPresenter;
 import client.notfound.NotFoundViewImpl;
+
+import com.devbliss.gwtbliss.client.mvp.BlissDefaultModule;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
 /**
  * GIN configuration of common components.
