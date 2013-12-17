@@ -12,7 +12,7 @@
  * the License.
  */
 
-package activityplayer.widget.instruction;
+package com.devbliss.gwtbliss.client.ui;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Node;
