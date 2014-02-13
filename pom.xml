@@ -41,15 +41,15 @@
 
   <properties>
     <gwt.version>2.5.1</gwt.version>
-    <gwtquery.version>1.1.0</gwtquery.version>
-    <gwtplatform.version>1.0-RC-3</gwtplatform.version>
+    <gwtquery.version>1.4.0</gwtquery.version>
+    <gwtplatform.version>1.1</gwtplatform.version>
     <guice-assistedinject.version>3.0</guice-assistedinject.version>
-    <gin.version>2.0.0</gin.version>
+    <gin.version>2.1.2</gin.version>
     <jsr311-api.version>1.1.1</jsr311-api.version>
-    <restygwt.version>1.3</restygwt.version>
+    <restygwt.version>1.4</restygwt.version>
     <gwt-pushstate.version>1.0.0</gwt-pushstate.version>
     <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
-    <junit.version>4.10</junit.version>
+    <junit.version>4.11</junit.version>
     <mockito.version>1.9.5</mockito.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -320,7 +320,7 @@
         <plugin>
           <artifactId>jdeb</artifactId>
           <groupId>org.vafer</groupId>
-          <version>0.11</version>
+          <version>1.0.1</version>
         </plugin>
         <plugin>
           <groupId>org.mortbay.jetty</groupId>
