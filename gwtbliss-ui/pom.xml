@@ -2,6 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <properties>
+  	<arg.memory>-Xmx1024m</arg.memory>
+  </properties>
+
   <parent>
     <groupId>com.devbliss</groupId>
     <artifactId>gwtbliss</artifactId>
@@ -27,4 +31,92 @@
     </dependency>
   </dependencies>
 
+  <build>
+  <plugins>
+  
+  	<!--
+  	    Unit tests configuration
+  	      - runs only unit tests (excludes GWTTests)
+  	 -->
+  	 <plugin>
+  	 <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.15</version>
+        <configuration>
+          <argLine>${arg.memory}</argLine>
+          <!-- Skip running surefire we hook in its goals manually to controll 
+            when to run unit tests and when to run integration tests -->
+          <skip>true</skip>
+          <!-- Show the stacktrace in detail if test fails -->
+          <trimStackTrace>false</trimStackTrace>
+        </configuration>
+        <executions>
+          <!-- Configure surefire for mvn test -->
+          <execution>
+            <id>unit-tests</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+
+              <!-- Disable skipping tests in test phase -->
+              <skip>false</skip>
+              <excludes>
+                <!-- Exclude all GWTTEST from unit-test phase -->
+                <exclude>**/*GWTTest.java</exclude>
+                <exclude>**/GWTTestSuite.java</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+  	 </plugin>
+  	 
+  	<!-- 
+  	    GWTTests configuration
+  	 -->
+	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.16</version>
+        <configuration>
+          <argLine>${arg.memory}</argLine>
+          <includes>
+            <!-- Include just the GWTTestSuite to make execution of integration-test 
+              faster, since the environment just needed to be mounted once per suite. -->
+            <include>**/GWTTestSuite.java</include>
+          </includes>
+          <additionalClasspathElements>
+            <additionalClasspathElement>${project.build.sourceDirectory}</additionalClasspathElement>
+            <additionalClasspathElement>${project.build.testSourceDirectory}</additionalClasspathElement>
+          </additionalClasspathElements>
+          <useManifestOnlyJar>false</useManifestOnlyJar>
+          <systemProperties>
+            <property>
+              <name>gwt.args</name>
+              <value>-out target/gwt-test</value>
+            </property>
+            <property>
+              <name>gwt.persistentunitcache</name>
+              <value>false</value>
+            </property>
+          </systemProperties>
+        </configuration>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>verify</id>
+            <goals>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      </plugins>
+</build>
 </project>

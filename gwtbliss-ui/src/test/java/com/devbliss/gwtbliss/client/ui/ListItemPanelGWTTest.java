@@ -13,6 +13,8 @@
 
 package com.devbliss.gwtbliss.client.ui;
 
+import suites.GWTTestSuite;
+
 import com.google.gwt.junit.client.GWTTestCase;
 
 /**
@@ -20,28 +22,28 @@ import com.google.gwt.junit.client.GWTTestCase;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  * 
  */
-public class ListPanelGwtTest extends GWTTestCase {
+public class ListItemPanelGWTTest extends GWTTestCase {
 
-    @Override
-    public String getModuleName() {
-        return "com.devbliss.gwtbliss.GwtblissUI";
-    }
+	@Override
+	  public String getModuleName() {
+	    return GWTTestSuite.TEST_MODULE_NAME;
+	  }
 
     /**
      * Check that an {@link ListItemPanel} properly created.
      */
     public void testConstruction() {
-        ListPanel listPanel = new ListPanel();
-        assertTrue("ul".equalsIgnoreCase(listPanel.getElement().getTagName()));
-        assertTrue("<ul></ul>".equalsIgnoreCase(listPanel.toString()));
+        ListItemPanel listItemPanel = new ListItemPanel();
+        assertTrue("li".equalsIgnoreCase(listItemPanel.getElement().getTagName()));
+        assertTrue("<li></li>".equalsIgnoreCase(listItemPanel.toString()));
 
-        listPanel = new ListPanel("");
-        assertTrue("ul".equalsIgnoreCase(listPanel.getElement().getTagName()));
-        assertTrue("<ul></ul>".equalsIgnoreCase(listPanel.toString()));
+        listItemPanel = new ListItemPanel("");
+        assertTrue("li".equalsIgnoreCase(listItemPanel.getElement().getTagName()));
+        assertTrue("<li></li>".equalsIgnoreCase(listItemPanel.toString()));
 
-        listPanel = new ListPanel("<li>phew</li>");
-        assertTrue("ul".equalsIgnoreCase(listPanel.getElement().getTagName()));
-        assertTrue("<ul><li>phew</li></ul>".equalsIgnoreCase(listPanel.toString()));
+        listItemPanel = new ListItemPanel("<a></a>");
+        assertTrue("li".equalsIgnoreCase(listItemPanel.getElement().getTagName()));
+        assertTrue("<li><a></a></li>".equalsIgnoreCase(listItemPanel.toString()));
     }
 
 }

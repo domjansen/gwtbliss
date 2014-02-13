@@ -14,6 +14,8 @@
 
 package com.devbliss.gwtbliss.client.ui;
 
+import suites.GWTTestSuite;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.resources.client.ClientBundle;
@@ -24,7 +26,7 @@ import com.google.gwt.resources.client.ImageResource;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  *
  */
-public class ImageAnchorTestGwt extends GWTTestCase {
+public class ImageAnchorGWTTest extends GWTTestCase {
 
   interface Bundle extends ClientBundle {
     ImageResource devbliss();
@@ -32,7 +34,7 @@ public class ImageAnchorTestGwt extends GWTTestCase {
 
   @Override
   public String getModuleName() {
-    return "com.devbliss.gwt.commons.Commons";
+    return GWTTestSuite.TEST_MODULE_NAME;
   }
 
   /**
@@ -61,9 +63,9 @@ public class ImageAnchorTestGwt extends GWTTestCase {
     assertEquals("http://www.devbliss.com", imageAnchor.getElement().getAttribute("href"));
     assertEquals(1, imageAnchor.getElement().getChildCount());
     assertTrue("img".equalsIgnoreCase(imageAnchor.getElement().getFirstChildElement().getTagName()));
-    assertEquals(bundle.devbliss().getWidth() + "px",
+    assertEquals(bundle.devbliss().getWidth() + ".0px",
         imageAnchor.getElement().getFirstChildElement().getStyle().getWidth());
-    assertEquals(bundle.devbliss().getHeight() + "px",
+    assertEquals(bundle.devbliss().getHeight() + ".0px",
         imageAnchor.getElement().getFirstChildElement().getStyle().getHeight());
     // there is no smart way to retrieve the background property
     assertTrue(imageAnchor.toString().contains(bundle.devbliss().getSafeUri().asString()));
