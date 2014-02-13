@@ -8,4 +8,9 @@ gwtbliss-shared/www-test
 gwtbliss-parent/target/
 gwtbliss-example/target
 
+*/target
+*/war
+*/gwt-unitCache
+*/www-test
+
 target
