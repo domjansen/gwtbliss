@@ -23,7 +23,7 @@ import com.google.gwt.user.client.ui.TextBox;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  * 
  */
-public class FormLabelIntegrationGWTTest extends GWTTestCase {
+public class FormLabelGWTTest extends GWTTestCase {
 
     private TextBox textBox01;
     private FormLabel formLabel01;

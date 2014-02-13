@@ -26,7 +26,7 @@ import com.google.gwt.resources.client.ImageResource;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  *
  */
-public class ImageAnchorIntegrationGWTTest extends GWTTestCase {
+public class ImageAnchorGWTTest extends GWTTestCase {
 
   interface Bundle extends ClientBundle {
     ImageResource devbliss();

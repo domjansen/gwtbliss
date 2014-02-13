@@ -6,10 +6,10 @@ import org.junit.runners.Suite;
 import com.devbliss.gwtbliss.client.ui.DefinitionDefinitionGWTTest;
 import com.devbliss.gwtbliss.client.ui.DefinitionListPanelGWTTest;
 import com.devbliss.gwtbliss.client.ui.DefinitionTermGWTTest;
-import com.devbliss.gwtbliss.client.ui.FormLabelIntegrationGWTTest;
-import com.devbliss.gwtbliss.client.ui.ImageAnchorIntegrationGWTTest;
-import com.devbliss.gwtbliss.client.ui.ListItemPanelIntegrationGWTTest;
-import com.devbliss.gwtbliss.client.ui.ListPanelIntegrationGWTTest;
+import com.devbliss.gwtbliss.client.ui.FormLabelGWTTest;
+import com.devbliss.gwtbliss.client.ui.ImageAnchorGWTTest;
+import com.devbliss.gwtbliss.client.ui.ListItemPanelGWTTest;
+import com.devbliss.gwtbliss.client.ui.ListPanelGWTTest;
 
 
 /**
@@ -24,10 +24,10 @@ import com.devbliss.gwtbliss.client.ui.ListPanelIntegrationGWTTest;
 	DefinitionDefinitionGWTTest.class,
 	DefinitionListPanelGWTTest.class,
 	DefinitionTermGWTTest.class,
-	FormLabelIntegrationGWTTest.class, 
-	ImageAnchorIntegrationGWTTest.class, 
-	ListItemPanelIntegrationGWTTest.class, 
-	ListPanelIntegrationGWTTest.class
+	FormLabelGWTTest.class, 
+	ImageAnchorGWTTest.class, 
+	ListItemPanelGWTTest.class, 
+	ListPanelGWTTest.class
 })
 public class GWTTestSuite {
 	
