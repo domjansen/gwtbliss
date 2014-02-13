@@ -20,7 +20,6 @@ import com.devbliss.gwtbliss.client.ui.ListPanelGWTTest;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    // adding GWTTestCases to suite
 	DefinitionDefinitionGWTTest.class,
 	DefinitionListPanelGWTTest.class,
 	DefinitionTermGWTTest.class,
