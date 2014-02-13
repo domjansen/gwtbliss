@@ -13,6 +13,8 @@
  */
 package com.devbliss.gwtbliss.client.ui;
 
+import suites.GWTTestSuite;
+
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.ui.FlowPanel;
 
@@ -28,7 +30,7 @@ public class DefinitionDefinitionGWTTest extends GWTTestCase {
 
   @Override
   public String getModuleName() {
-    return "com.devbliss.gwtbliss.GwtblissUI";
+    return GWTTestSuite.TEST_MODULE_NAME;
   }
 
   public void testConstruction() {

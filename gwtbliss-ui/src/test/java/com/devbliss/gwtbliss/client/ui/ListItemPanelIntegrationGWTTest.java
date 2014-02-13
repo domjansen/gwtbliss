@@ -13,6 +13,8 @@
 
 package com.devbliss.gwtbliss.client.ui;
 
+import suites.GWTTestSuite;
+
 import com.google.gwt.junit.client.GWTTestCase;
 
 /**
@@ -20,12 +22,12 @@ import com.google.gwt.junit.client.GWTTestCase;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  * 
  */
-public class ListItemPanelGwtTest extends GWTTestCase {
+public class ListItemPanelIntegrationGWTTest extends GWTTestCase {
 
-    @Override
-    public String getModuleName() {
-        return "com.devbliss.gwtbliss.GwtblissUI";
-    }
+	@Override
+	  public String getModuleName() {
+	    return GWTTestSuite.TEST_MODULE_NAME;
+	  }
 
     /**
      * Check that an {@link ListItemPanel} properly created.

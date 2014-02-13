@@ -13,6 +13,8 @@
 
 package com.devbliss.gwtbliss.client.ui;
 
+import suites.GWTTestSuite;
+
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -21,7 +23,7 @@ import com.google.gwt.user.client.ui.TextBox;
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  * 
  */
-public class FormLabelGwtTest extends GWTTestCase {
+public class FormLabelIntegrationGWTTest extends GWTTestCase {
 
     private TextBox textBox01;
     private FormLabel formLabel01;
@@ -34,7 +36,7 @@ public class FormLabelGwtTest extends GWTTestCase {
 
     @Override
     public String getModuleName() {
-        return "com.devbliss.gwtbliss.GwtblissUI";
+      return GWTTestSuite.TEST_MODULE_NAME;
     }
 
     @Override
