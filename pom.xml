@@ -40,7 +40,7 @@
 
 
   <properties>
-    <gwt.version>2.5.1</gwt.version>
+    <gwt.version>2.6.0</gwt.version>
     <gwtquery.version>1.4.0</gwtquery.version>
     <gwtplatform.version>1.1</gwtplatform.version>
     <guice-assistedinject.version>3.0</guice-assistedinject.version>
@@ -274,7 +274,7 @@
       -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.6</version>
+        <version>2.15</version>
         <configuration>
           <argLine>-Xmx512m</argLine>
           <additionalClasspathElements>

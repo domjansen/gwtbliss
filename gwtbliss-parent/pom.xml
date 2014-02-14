@@ -38,7 +38,7 @@
 
       By default these settings are optimized for development.
     -->
-    <gwt.plugin.version>2.5.0</gwt.plugin.version>
+    <gwt.plugin.version>2.6.0</gwt.plugin.version>
     <gwt.logLevel>INFO</gwt.logLevel>
     <gwt.inplace>false</gwt.inplace>
     <gwt.style>DETAILED</gwt.style>
@@ -65,7 +65,7 @@
     <gwt.module.gwt.enableDebugId>true</gwt.module.gwt.enableDebugId>
     <gwt.module.CssResource.style>pretty</gwt.module.CssResource.style>
     <gwt.module.devModeRedirectEnabled>true</gwt.module.devModeRedirectEnabled>
-    <gwt.module.user.agent>ie8,ie9,gecko1_8,safari,opera</gwt.module.user.agent> <!-- no ie6 by default -->
+    <gwt.module.user.agent>ie8,ie9,ie10,gecko1_8,safari,opera</gwt.module.user.agent> <!-- no ie6 by default -->
 
     <!--
       Old but fast and compatible with GWT's embedded Jetty.
@@ -355,7 +355,7 @@
     <profile>
       <id>ie</id>
       <properties>
-        <gwt.module.user.agent>ie6,ie8,ie9</gwt.module.user.agent>
+        <gwt.module.user.agent>ie8,ie9,ie10</gwt.module.user.agent>
       </properties>
     </profile>
 
