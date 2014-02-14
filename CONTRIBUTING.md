@@ -29,7 +29,7 @@ The community is essential to spread the bliss of development. We improve our op
 * Push your changes to the topic branch in your fork of the repository. `git push origin {branchname}`
 * Submit a pull request to the repository in the devbliss organization. [see this link](https://help.github.com/articles/creating-a-pull-request)
 * Write an informative pull request description.
-* Please don't add information to `CHANGES.md`.
+* Please don't add information to `docs/Changelog.md`.
 
 ## How to make a release
 
