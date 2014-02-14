@@ -20,7 +20,6 @@
   <!--
     GWT module dependencies.
   -->
-  <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.logging.Logging" />
   <inherits name="com.google.gwt.precompress.Precompress" />
   <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
