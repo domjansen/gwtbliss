@@ -69,8 +69,8 @@
         <artifactId>gwtbliss-all</artifactId>
         <!--
           Can't use ${project.version} here because the child projects would override the property.
-        -->
-        <version>${project.version}</version>
+         -->
+         <version>${project.parent.version}</version>
       </dependency>
 
       <!--
