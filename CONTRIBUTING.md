@@ -53,7 +53,7 @@ User with appropriate rights can create two kind of releases: snaphost and norma
 * mvn release:prepare <-> prepare for a release in SCM
 * mvn release:perform <-> perform a release from SCM
 
-You can now check that there is a new tag on [github](https://github.com/devbliss/mongojack/releases). Then, on [oss.sonatype.org](http://oss.sonatype.org), after logging in, the mongojack release can be found under `Staging Repositories`. Select it and click on `Close` then on `Release`. After a while, the Maven Central repository will be updated and you can find the new version of mongojack under [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22mongojack%22).
+You can now check that there is a new tag on [github](https://github.com/devbliss/gwtbliss/releases). Then, on [oss.sonatype.org](http://oss.sonatype.org), after logging in, the gwtbliss release can be found under `Staging Repositories`. Select it and click on `Close` then on `Release`. After a while, the Maven Central repository will be updated and you can find the new version of gwtbliss under [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cgwtbliss).
 
 ### For a snapshot release:
-* mvn clean deploy <-> deploy a snapshot version of mongojack on https://oss.sonatype.org/index.html
+* mvn clean deploy <-> deploy a snapshot version of gwtbliss on https://oss.sonatype.org/index.html
