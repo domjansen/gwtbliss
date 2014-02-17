@@ -38,8 +38,9 @@
     </dependency>
     
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-all</artifactId>
+      <version>${project.parent.version}</version>
     </dependency>
   </dependencies>
 

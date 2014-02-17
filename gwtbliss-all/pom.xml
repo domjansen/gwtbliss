@@ -14,27 +14,27 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-common</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-effect</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-mvp</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-service</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-ui</artifactId>
       <version>${project.version}</version>
     </dependency>

@@ -42,7 +42,7 @@
       <artifactId>gwt-dev</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.devbliss</groupId>
+      <groupId>com.devbliss.gwtbliss</groupId>
       <artifactId>gwtbliss-common</artifactId>
       <version>${project.version}</version>
     </dependency>
