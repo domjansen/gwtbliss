@@ -65,7 +65,7 @@
     <gwt.module.gwt.enableDebugId>true</gwt.module.gwt.enableDebugId>
     <gwt.module.CssResource.style>pretty</gwt.module.CssResource.style>
     <gwt.module.devModeRedirectEnabled>true</gwt.module.devModeRedirectEnabled>
-    <gwt.module.user.agent>ie8,ie9,ie10,gecko1_8,safari,opera</gwt.module.user.agent> <!-- no ie6 by default -->
+    <gwt.module.user.agent>ie8,ie9,ie10,gecko1_8,safari</gwt.module.user.agent>
 
     <!--
       Old but fast and compatible with GWT's embedded Jetty.
@@ -360,16 +360,6 @@
     </profile>
 
     <!--
-      Profile for limiting browser support to Opera.
-    -->
-    <profile>
-      <id>opera</id>
-      <properties>
-        <gwt.module.user.agent>opera</gwt.module.user.agent>
-      </properties>
-    </profile>
-
-    <!--
       Profile for an optimized build.
     -->
     <profile>
@@ -382,7 +372,7 @@
         <gwt.disableCastChecking>true</gwt.disableCastChecking>
         <gwt.disableClassMetadata>true</gwt.disableClassMetadata>
         <gwt.compiler.enableClosureCompiler>true</gwt.compiler.enableClosureCompiler>
-        <gwt.compiler.fragmentCount>3</gwt.compiler.fragmentCount>
+        <gwt.compiler.fragmentCount>5</gwt.compiler.fragmentCount>
         <gwt.disableRunAsync>false</gwt.disableRunAsync>
         <gwt.module.gwtp.prebootstrapper />
         <gwt.module.logging.enabled>FALSE</gwt.module.logging.enabled>
