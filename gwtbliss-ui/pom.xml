@@ -94,7 +94,7 @@
           <systemProperties>
             <property>
               <name>gwt.args</name>
-              <value>-out target/gwt-test</value>
+              <value>-war target/gwt-test</value>
             </property>
             <property>
               <name>gwt.persistentunitcache</name>
