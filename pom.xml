@@ -52,6 +52,7 @@
     <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
     <junit.version>4.11</junit.version>
     <mockito.version>1.9.5</mockito.version>
+    <jetty.version>6.1.26</jetty.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -66,7 +67,7 @@
         gwtbliss shared code.
       -->
       <dependency>
-        <groupId>com.devbliss</groupId>
+        <groupId>com.devbliss.gwtbliss</groupId>
         <artifactId>gwtbliss-all</artifactId>
         <!--
           Can't use ${project.version} here because the child projects would override the property.
