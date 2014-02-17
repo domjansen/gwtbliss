@@ -63,10 +63,11 @@ public class ImageAnchorGWTTest extends GWTTestCase {
     assertEquals("http://www.devbliss.com", imageAnchor.getElement().getAttribute("href"));
     assertEquals(1, imageAnchor.getElement().getChildCount());
     assertTrue("img".equalsIgnoreCase(imageAnchor.getElement().getFirstChildElement().getTagName()));
-    assertEquals(bundle.devbliss().getWidth() + ".0px",
-        imageAnchor.getElement().getFirstChildElement().getStyle().getWidth());
-    assertEquals(bundle.devbliss().getHeight() + ".0px",
-        imageAnchor.getElement().getFirstChildElement().getStyle().getHeight());
+
+    assertEquals(bundle.devbliss().getWidth(),
+        imageAnchor.getElement().getFirstChildElement().getPropertyInt("width"));
+    assertEquals(bundle.devbliss().getHeight(),
+        imageAnchor.getElement().getFirstChildElement().getPropertyInt("height"));
     // there is no smart way to retrieve the background property
     assertTrue(imageAnchor.toString().contains(bundle.devbliss().getSafeUri().asString()));
   }
