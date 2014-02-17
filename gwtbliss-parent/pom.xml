@@ -371,7 +371,7 @@
         <gwt.enableAssertions>false</gwt.enableAssertions>
         <gwt.disableCastChecking>true</gwt.disableCastChecking>
         <gwt.disableClassMetadata>true</gwt.disableClassMetadata>
-        <gwt.compiler.enableClosureCompiler>true</gwt.compiler.enableClosureCompiler>
+        <gwt.compiler.enableClosureCompiler>false</gwt.compiler.enableClosureCompiler>
         <gwt.compiler.fragmentCount>5</gwt.compiler.fragmentCount>
         <gwt.disableRunAsync>false</gwt.disableRunAsync>
         <gwt.module.gwtp.prebootstrapper />
