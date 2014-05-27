@@ -17,7 +17,7 @@ package com.devbliss.gwtbliss.client;
 /**
  * A typed command to use in a command/callback pattern.
  *
- * @param <T> Type which gets passed to the {@link #execute(Object)
+ * @param <T> Type which gets passed to the {@link #execute(Object)}
  *
  * @author <a href="mailto:jb@barop.de">Johannes Barop</a>
  *
