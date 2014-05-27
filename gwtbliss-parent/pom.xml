@@ -38,7 +38,7 @@
 
       By default these settings are optimized for development.
     -->
-    <gwt.plugin.version>2.6.0</gwt.plugin.version>
+    <gwt.plugin.version>2.6.1</gwt.plugin.version>
     <gwt.logLevel>INFO</gwt.logLevel>
     <gwt.inplace>false</gwt.inplace>
     <gwt.style>DETAILED</gwt.style>
