@@ -34,17 +34,14 @@ public class NoDivPanel extends ComplexPanel {
     final String asString = safeHtml.asString();
 
     getElement().setInnerHTML(asString);
-    Logger.getLogger("nodiv").info(asString);
 
   }
 
   public NoDivPanel() {
     setElement(createDocumentFragment());
-    Logger.getLogger("nodiv").info("empty");
   }
 
   public NoDivPanel(final String tag, final String html) {
-    Logger.getLogger("nodiv").info(html);
     /*
      * IE has very arbitrary rules about what will and will not accept innerHTML. <table> and
      * <tbody> simply won't, the property is read only. <p> will explode if you incorrectly try to
@@ -75,14 +72,12 @@ public class NoDivPanel extends ComplexPanel {
   public void add(final Widget widget) {
     getChildren().add(widget);
     DOM.appendChild(getElement(), widget.getElement());
-    Logger.getLogger("nodiv").info("add");
   }
 
   @Override
   public void add(final Widget widget, final Element elem) {
     final com.google.gwt.user.client.Element clientElem = elem.cast();
     super.add(widget, clientElem);
-    Logger.getLogger("nodiv").info("add");
   }
 
 }
