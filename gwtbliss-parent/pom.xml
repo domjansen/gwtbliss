@@ -110,9 +110,6 @@
             <copyWebapp>false</copyWebapp>
             <debugSuspend>false</debugSuspend>
             <enableAssertions>${gwt.enableAssertions}</enableAssertions>
-            <runClasspathExcludes>
-              <runClasspathExclude>gwt-dev-${gwt.version}.jar</runClasspathExclude>
-            </runClasspathExcludes>
           </configuration>
           <executions>
             <!--
