@@ -38,7 +38,7 @@
 
       By default these settings are optimized for development.
     -->
-    <gwt.plugin.version>2.6.1</gwt.plugin.version>
+    <gwt.plugin.version>2.7.0</gwt.plugin.version>
     <gwt.logLevel>INFO</gwt.logLevel>
     <gwt.inplace>false</gwt.inplace>
     <gwt.style>DETAILED</gwt.style>
@@ -53,7 +53,7 @@
     <gwt.compiler.compileReport>false</gwt.compiler.compileReport>
     <gwt.compiler.soycDetailed>false</gwt.compiler.soycDetailed>
     <gwt.compiler.localWorkers>2</gwt.compiler.localWorkers>
-    <gwt.extraJvmArgs>-Xms512m -Xmx1g -XX:MaxPermSize=256m</gwt.extraJvmArgs>
+    <gwt.extraJvmArgs>-Xms1g -Xmx2g -XX:MaxPermSize=512m</gwt.extraJvmArgs>
     <gwt.module.gwtp.prebootstrapper>com.devbliss.gwtbliss.client.ExceptionPreBootstrapper</gwt.module.gwtp.prebootstrapper>
     <gwt.module.logging.enabled>TRUE</gwt.module.logging.enabled>
     <gwt.module.logging.logLevel>INFO</gwt.module.logging.logLevel>
@@ -110,9 +110,6 @@
             <copyWebapp>false</copyWebapp>
             <debugSuspend>false</debugSuspend>
             <enableAssertions>${gwt.enableAssertions}</enableAssertions>
-            <runClasspathExcludes>
-              <runClasspathExclude>gwt-dev-${gwt.version}.jar</runClasspathExclude>
-            </runClasspathExcludes>
           </configuration>
           <executions>
             <!--
