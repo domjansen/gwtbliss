@@ -14,3 +14,6 @@ gwtbliss-example/target
 */www-test
 
 target
+
+*.iml
+.idea/

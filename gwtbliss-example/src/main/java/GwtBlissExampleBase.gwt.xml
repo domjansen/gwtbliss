@@ -47,13 +47,7 @@
     Disable unwanted logging handlers.
   -->
   <set-property
-    name="gwt.logging.firebugHandler"
-    value="DISABLED" />
-  <set-property
     name="gwt.logging.hasWidgetsHandler"
-    value="DISABLED" />
-  <set-property
-    name="gwt.logging.popupHandler"
     value="DISABLED" />
 
   <!--
