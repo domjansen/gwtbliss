@@ -43,7 +43,7 @@
   <properties>
     <gwt.version>2.7.0</gwt.version>
     <gwtquery.version>1.4.0</gwtquery.version>
-    <gwtplatform.version>1.1</gwtplatform.version>
+    <gwtplatform.version>1.4</gwtplatform.version>
     <guice-assistedinject.version>3.0</guice-assistedinject.version>
     <gin.version>2.1.2</gin.version>
     <jsr311-api.version>1.1.1</jsr311-api.version>

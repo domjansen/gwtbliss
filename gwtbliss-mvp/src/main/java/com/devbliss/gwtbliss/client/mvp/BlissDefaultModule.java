@@ -22,7 +22,7 @@ import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
-import com.gwtplatform.mvp.client.proxy.RouteTokenFormatter;
+import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
 
 /**
  * Special version of {@link DefaultModule} which uses {@link DefaultPlaceManager} and binds it's
